@@ -1,0 +1,215 @@
+.App {
+  text-align: center;
+  position: relative
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.home-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.body-header {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%
+}
+
+.theme-header { 
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.guess-option-container {
+  height: 375px;
+  width: 80vw;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.guess-option {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.guess-button-container {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.guess-button {
+  background-color: #EAEAEA;
+  width: 150px;
+  height: 40px;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.word-box-container {
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+/* .word-box {
+  width: 80%;
+  height: 90%;
+  background-color: #F3F1F1;
+} */
+
+.word-box {
+  display: flex;
+  width: 75vw;
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  gap: 20px; /* Optional: Adds space between items */
+}
+
+.tries-remaining {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600
+}
+
+.puzzle-piece-container {
+  flex: 1 0 20%; /* Grow, don't shrink, base width of 20% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.puzzle-piece {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600
+}
+
+.puzzle-piece::before, .puzzle-piece::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: lightblue;
+  top: 10px; /* Adjust this value based on the height of the rectangle to vertically center */
+}
+
+.puzzle-piece::before {
+  left: -12px; /* Half outside the container */
+  border-radius: 0 12px 12px 0; /* Make it a half circle */
+  background-color: white; /* Match to the container's or body's background color */
+}
+
+.puzzle-piece::after {
+  right: -12px; /* Half outside the container */
+  border-radius: 0 12px 12px 0; /* Make it a half circle */
+  
+}
+
+
+
+@keyframes upAndDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.rectangle {
+  animation: upAndDown 0.5s ease-in-out;
+}
+
+
+
+.result-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: white;
+}
+
+.play-again {
+  border: none;
+  height: 40px;
+  width: 125px;
+  font-weight: 500;
+  font-size: 20px
+}
